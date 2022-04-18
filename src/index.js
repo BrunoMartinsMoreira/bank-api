@@ -8,7 +8,7 @@ const custumers = [];
 
 app.post('/account', (req, res) => {
   const {name, cpf} = req.body;
-  const costumerExists = costumers.some(custumer => custumer.cpf === cpf );
+  const costumerExists = custumers.some(custumer => custumer.cpf === cpf );
 
   if(costumerExists){
     return res.status(400).json({
@@ -26,6 +26,17 @@ app.post('/account', (req, res) => {
   custumers.push(data);
 
   return res.status(201).send();
+
+});
+
+app.get('/statement', (req, res) => {
+  const cpf = req.params;
+
+  const custumer = custumers.find(customer => customer.cpf === cpf);
+
+  return res.json({
+    statement: custumer.statement
+  })
 
 });
 
