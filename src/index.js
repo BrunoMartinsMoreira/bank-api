@@ -34,10 +34,16 @@ app.get('/statement', (req, res) => {
 
   const custumer = custumers.find(customer => customer.cpf === cpf);
 
+  if(!custumer){
+    return res.status(400).json({
+      error: 'customer not found'
+    })
+  }
+
   return res.json({
     statement: custumer.statement
   })
 
 });
 
-app.listen(3434)
+app.listen(3434);
