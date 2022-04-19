@@ -1,5 +1,7 @@
-#FinApi - Financeira
-##Requisitos
+#Primeiro projeto do chapter I do Ignite NodeJs da Rockeatseat
+
+##FinApi - Financeira
+###Requisitos
 [] Deve ser possível criar umma conta
 [] Deve ser possível buscar o extrato bancário do cliente
 [] Deve ser possível realizar um depósito
@@ -8,7 +10,7 @@
 [] Deve ser possível atualizar dados da conta do cliente
 [] Deve ser possível obter dados da conta do cliente
 [] Deve ser possível deletar uma conta
-##Regras de negócio
+###Regras de negócio
 [] Não deve ser possível cadastrar uma conta com CPF já existente
 [] Não deve ser possível fazer depósito em uma conta não existente
 [] Não deve ser possível buscar extrato em uma conta não existente
