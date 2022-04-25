@@ -34,4 +34,4 @@ const custumers = [];
   }
 }
 
-module.exports = new CustumerController;
+module.exports = new CustumerController();
