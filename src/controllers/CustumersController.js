@@ -26,13 +26,7 @@ const custumers = [];
   async getStatement(req, res){
     const cpf = req.headers;
 
-    const custumer = custumers.find(customer => customer.cpf === cpf);
-
-    if(!custumer){
-      return res.status(400).json({
-        error: 'customer not found'
-      })
-    }
+    const {custumer} = req;
 
     return res.json({
       statement: custumer.statement

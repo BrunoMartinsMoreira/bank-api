@@ -11,6 +11,8 @@
     })
   }
 
+  req.customer = customer;
+
   return next();
   
 }
