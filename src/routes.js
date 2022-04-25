@@ -1,12 +1,13 @@
 const express = require('express');
 const customerController = require('./controllers/CustumersController');
-const depositController = require('./controllers/DepositController');
+const accountController = require('./controllers/AccountController');
 const verifyIfExistsAccountCPF = require('./middlewares/verifyIfExistsAccountCPF');
 
 const routes = express.Router();
 
 routes.post('/account', customerController.createAccount);
 routes.get('/statement', verifyIfExistsAccountCPF, customerController.getStatement);
-routes.post('/deposit', verifyIfExistsAccountCPF, depositController.deposit());
+routes.post('/deposit', verifyIfExistsAccountCPF, accountController.deposit);
+routes.post('/witdraw', verifyIfExistsAccountCPF, accountController.withraw);
 
 module.exports(routes)
