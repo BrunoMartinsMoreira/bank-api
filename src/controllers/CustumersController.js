@@ -32,6 +32,15 @@ const custumers = [];
       statement: custumer.statement
     })
   }
+
+  async updateAccountData(req, res){
+    const {name} = req.body;
+    const {custumer} = req;
+    
+    custumer.name = name;
+
+    return res.status(201).send
+  }
 }
 
 module.exports = new CustumerController();

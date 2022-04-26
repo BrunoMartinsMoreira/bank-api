@@ -6,6 +6,7 @@ const verifyIfExistsAccountCPF = require('./middlewares/verifyIfExistsAccountCPF
 const routes = express.Router();
 
 routes.post('/account', customerController.createAccount);
+routes.put('/account', verifyIfExistsAccountCPF, customerController.updateAccountData);
 routes.get('/statement', verifyIfExistsAccountCPF, customerController.getStatement);
 routes.post('/deposit', verifyIfExistsAccountCPF, accountController.deposit);
 routes.post('/witdraw', verifyIfExistsAccountCPF, accountController.withraw);
