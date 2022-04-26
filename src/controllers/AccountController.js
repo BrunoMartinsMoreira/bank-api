@@ -51,6 +51,21 @@ class DepositController{
     return res.status(201).send();
 
   }
+
+  getStatementByDate(req, res){
+    const {customer} = req;
+    const {date} = req.query;
+
+    const formatDate = new Date(date + "00:00");
+
+    const statement = customer.statement.filter((statementItem)=>{
+      statementItem.created_at.toDateString() === new Date(formatDate).toDateString()
+    })
+
+    if(statement){
+      return res.json(statement)
+    }
+  }
 }
 
 module.exports = new DepositController();
